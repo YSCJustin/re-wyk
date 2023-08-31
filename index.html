@@ -18,7 +18,15 @@
     <style>
         html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -33,28 +41,48 @@
   justify-content: center;
 
   margin-top: auto;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
 
 
+}
+.white{
+    color: hsl(205, 16%, 77%);
+    font-weight:450;
+    font-size:14px;
+    margin-right: 1px;
 }
     </style>
     <script defer src="/index.js"></script>
     <title>Re-WYK</title>
 </head>
-<body>
+<body style="background-color: #0a6000; width:100vw">
+    <nav style="background-color: #0a6000; height: 40px; ">
+        <ul>
+           
+        </ul>
+        <ul>
+           <li>
+            <a class="white" href="https://yscjustin.dev">YSCJustin</a>
+            <a class="white" href="https://yscjustin.dev">Home</a>
+            
+                <a class="white"style="margin-right: 160px;" href="https://yscjustin.dev/projects" >Projects</a>
+                
+           </li>
+        </ul>
+    </nav>
     <div class="wrapper">
-        <nav class="container-fluid">
+        <nav class="container-fluid" id="navbar"style='width:100vw'>
             <ul>
                 <li>
-                    <a href="/" aria-label="Back home" style="font-size:3.2vw">
-                       <strong>Re-WYK</strong>
+                    <a href="/" aria-label="Back home" style="font-size:35px">
+                       <strong style="margin-left:16vw">Re-WYK</strong>
                     </a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <a href="/" aria-label="Back home" style="font-size:1.5vw">
-                       Home
+                    <a href="/" aria-label="Back home" style="font-size:15px; margin-right:5vw">
+                       HOME
                     </a>
                 </li>
                 <li>
@@ -63,8 +91,19 @@
             </ul>
         </nav>
         <main class="container">
-            d
+
+            <div>
+                <!-- <h2 style="margin-top:25px; margin-bottom:3px">You may ask:</h2>
+                
+                <p>This page looks familiar.</p>
+                <h2 style="margin-bottom:4px">You are absolutely right.</h2>
+                <h5 style="margin-top:3px">This is my attempt at coding a replication of <a href="wyk.edu.hk">wyk.edu.hk</a>.</h5> -->
+            </div>
+           
+ 
+            
         </main>
+        
         <footer>YSCJustin <span id="current-year"></span></footer>
     </div>
        
