@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="/css/pico.min.css">
+
+   
+
+<style>
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-direction: column; 
+}
+h1 {
+  font-size: 80px;
+  font-weight: lighter;
+  margin-bottom: 0; 
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  width: 100%;
+
+}
+</style>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+
+    const currentYear = new Date().getFullYear();
+    document.getElementById('current-year').textContent = currentYear;
+})
+
+    </script>
+    <title>Page not found</title>
+
+</head>
+
+<body>
+
+    <main class="container-fluid">
+        <h1 style="font-size: 55px; font-weight: lighter;">404</h1>
+
+        <p style="color: #959798; font-weight: 350;">Component not found.</p>
+        <br>
+        <a href="/" role="button" style="font-weight:lighter; font-weight: 200; word-spacing: 250%; line-height: 1;">GO BACK HOME</a>
+    </main>
+    
+    <footer>YSCJustin <span id="current-year"></span></footer>
+
+</body>
+</html>
