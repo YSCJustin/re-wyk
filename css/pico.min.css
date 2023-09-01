@@ -421,6 +421,10 @@ kbd {
       min-width: 100vw;
       min-height: 56.25vw; /* 16/9 aspect ratio */
     }
+      nav#real {
+    display: flex;
+    justify-content: center;
+  }
   }
 [data-theme=dark] {
     --background-color: #11191f;
