@@ -7,10 +7,28 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
   const countdownElement = document.getElementById('countdown');
-  const datenow = 1000 - (Date.now() % 1000);
+ 
   updateTime();
+  let datenow = 1000 - (Date.now() % 1000);
   setTimeout(updateTime, datenow);
-  setInterval(updateTime, 1000);
+  setInterval(() => {
+    
+    const currentTimestamp = Math.round(Date.now() / 1000);
+   
+
+    const timeDifference = countdownTimestamp - currentTimestamp;
+ 
+    if (timeDifference <= 0) {
+     
+      countdownElement.textContent = `School started ${formatTime(Math.abs(timeDifference))} ago`;
+    } else {
+
+      countdownElement.textContent = `${formatTime(timeDifference)} left`;
+    }
+  }, 1000);
+
+
+
 
   function updateTime(){
 
