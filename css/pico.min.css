@@ -2762,7 +2762,10 @@ input[type=submit][aria-busy=true] {
         opacity: 1
     }
 }
+.arts{
+    background-color: var(--secondary-focus);
 
+}
 [aria-controls] {
     cursor: pointer
 }
@@ -2858,4 +2861,5 @@ div.wrapper{
   --switch-color: var(--primary-inverse);
   --switch-checked-background-color: var(--primary);
 }
+
 /*# sourceMappingURL=pico.min.css.map */
