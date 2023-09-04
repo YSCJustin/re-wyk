@@ -7,27 +7,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
   const countdownElement = document.getElementById('countdown');
+  const datenow = 1000 - (Date.now() % 1000);
+  updateTime();
+  setTimeout(updateTime, datenow);
+  setInterval(updateTime, 1000);
 
-  const currentTimestamp = Math.floor(Date.now() / 1000);
-
-
-  const timeDifference = countdownTimestamp - currentTimestamp;
-
-  if (timeDifference <= 0) {
-   
-    countdownElement.textContent = `School started ${formatTime(Math.abs(timeDifference))} ago`;
-  } else {
-
-    countdownElement.textContent = `${formatTime(timeDifference)} left`;
-  }
-
-  setInterval(() => {
+  function updateTime(){
 
     const currentTimestamp = Math.floor(Date.now() / 1000);
-
+   
 
     const timeDifference = countdownTimestamp - currentTimestamp;
-
+ 
     if (timeDifference <= 0) {
      
       countdownElement.textContent = `School started ${formatTime(Math.abs(timeDifference))} ago`;
@@ -35,9 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       countdownElement.textContent = `${formatTime(timeDifference)} left`;
     }
-  }, 1000);
-
-
+  }
   function formatTime(time) {
     const hours = Math.floor(time / 3600);
     const minutes = Math.floor((time % 3600) / 60);
