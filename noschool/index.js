@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             chancePercentElement.textContent = "75%";
         } else if(rate >= 4){
             chanceElement.textContent = "Extremely likely";
-            chancePercentElement.textContent = "90%";
+            chancePercentElement.textContent = ">75%";
         }
         
     })
