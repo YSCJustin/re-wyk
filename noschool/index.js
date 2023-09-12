@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         let rateobv = 0;
         for(let i = 0; i < 2; i++){
             let foredata = data.forecast.forecastday[i]
-            averagerainfall += (foredata.day.totalprecip_mm)/24;
+            averagerainfall += (foredata.day.totalprecip_mm)/4;
             averagewindspeed += (foredata.day.maxwind_kph);
         }
         averagewindspeed = Math.round((averagewindspeed/2+ Number.EPSILON) * 100)/100;
