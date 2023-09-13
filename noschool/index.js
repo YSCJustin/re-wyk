@@ -4,10 +4,49 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById('current-year').textContent = currentYear;
 
     let hkodata;
+    let warndata;
+    await fetch('https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=en').then(response => response.json()).then(async data => {warndata = data.warningMessage});
     await fetch('https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=en').then(response => response.json()).then(async data => {hkodata = data});
     fetch('https://api.weatherapi.com/v1/forecast.json?key=43218fe8c7054f2aa3245222231009&q=Hong%20Kong&days=3&aqi=no&alerts=yes').then(response => response.json()).then(async data => {
         let averagewindspeed = 0;
         let averagerainfall = 0;
+        let noschool = false;
+        let warnings = document.getElementById('warnings');
+        for(var i = 0; i < warndata.length; i++){
+            if(warndata[i].includes("No. 8") || warndata[i].includes("No. 9") || warndata[i].includes("No. 10") 
+            || warndata[i].includes("Red Rainstorm") || warndata[i].includes("Black Rainstorm")){
+                noschool = true;
+                
+            }
+            // put warnings in warnings element
+            if(warndata[i].includes("No. 1")){
+                warnings.innerHTML += "<li>Signal No. 1</li>";
+            }
+            if(warndata[i].includes("No. 3")){
+                warnings.innerHTML += "<li>Signal No. 3</li>";
+            }
+            
+            if(warndata[i].includes("No. 8")){
+                warnings.innerHTML += "<li>Signal No. 8</li>";
+            }
+            if(warndata[i].includes("No. 9")){
+                warnings.innerHTML += "<li>Signal No. 9</li>";
+            }
+            if(warndata[i].includes("No. 10")){
+                warnings.innerHTML += "<li>Signal No. 10</li>";
+            }
+            if(warndata[i].includes("Yellow Rainstorm")){
+                warnings.innerHTML += "<li>Yellow Rainstorm</li>";
+            }
+            if(warndata[i].includes("Red Rainstorm")){
+                warnings.innerHTML += "<li>Red Rainstorm</li>";
+            }
+            if(warndata[i].includes("Black Rainstorm")){
+                warnings.innerHTML += "<li>Black Rainstorm</li>";
+            }
+
+
+        }
         let rate = 0;
         let rateobv = 0;
         for(let i = 0; i < 2; i++){
@@ -46,6 +85,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         
         const chanceElement = document.getElementById('chance');
         const chancePercentElement = document.getElementById('chanceper');
+        if(noschool){
+            chanceElement.textContent = "No School";
+            chancePercentElement.textContent = "100%";
+            return;
+        }
         if(rate == 0){
             chanceElement.textContent = "Not likely";
             chancePercentElement.textContent = "0%";
