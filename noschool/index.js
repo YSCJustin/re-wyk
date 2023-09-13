@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         let noschool = false;
         let warnings = document.getElementById('warnings');
         for(var i = 0; i < warndata.length; i++){
-            if(warndata[i].includes("No. 8") || warndata[i].includes("No. 9") || warndata[i].includes("No. 10") 
-            || warndata[i].includes("Red Rainstorm") || warndata[i].includes("Black Rainstorm")){
+            if((warndata[i].includes("No. 8") || warndata[i].includes("No. 9") || warndata[i].includes("No. 10") 
+            || warndata[i].includes("Red Rainstorm") || warndata[i].includes("Black Rainstorm"))){
                 noschool = true;
                 
             }
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
         if(rate == 0){
             chanceElement.textContent = "Not likely";
-            chancePercentElement.textContent = "0%";
+            chancePercentElement.textContent = "<25%";
         } else if(rate == 1){
             chanceElement.textContent = "Maybe";
             chancePercentElement.textContent = "25%";
