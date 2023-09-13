@@ -1,2 +1,2 @@
 # re-wyk
-My attempt at recreating the wyk.edu.hk website.
+My attempt at recreating the https://wyk.edu.hk website.
