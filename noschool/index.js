@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             chancePercentElement.textContent = "100%";
             return;
         }
+        
         if(rate == 0){
             chanceElement.textContent = "Not likely";
             chancePercentElement.textContent = "<25%";
