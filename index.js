@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const hours = Math.floor((time % 86400) / 3600);
     const minutes = Math.floor((time % 3600) / 60);
     const seconds = time % 60;
-    return `${days > 0 ? days : ""} days ${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
+    return `${days > 0 ? days + " days": ""} ${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
   }
 
 
