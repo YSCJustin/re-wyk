@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         let averagerainfall = 0;
         let noschool = false;
         let warnings = document.getElementById('warnings');
+        let rate = 0;
         for(var i = 0; i < warndata.length; i++){
             if((warndata[i].includes("No. 8") || warndata[i].includes("No. 9") || warndata[i].includes("No. 10") 
             || warndata[i].includes("Red Rainstorm") || warndata[i].includes("Black Rainstorm"))){
@@ -21,9 +22,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             // put warnings in warnings element
             if(warndata[i].includes("No. 1")){
                 warnings.innerHTML += "<li>Signal No. 1</li>";
+                rate+=1;
             }
             if(warndata[i].includes("No. 3")){
                 warnings.innerHTML += "<li>Signal No. 3</li>";
+                rate+=2;
             }
             
             if(warndata[i].includes("No. 8")){
@@ -37,6 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
             if(warndata[i].includes("Yellow Rainstorm")){
                 warnings.innerHTML += "<li>Yellow Rainstorm</li>";
+                rate+=1;
             }
             if(warndata[i].includes("Red Rainstorm")){
                 warnings.innerHTML += "<li>Red Rainstorm</li>";
@@ -47,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
         }
-        let rate = 0;
+
         let rateobv = 0;
         for(let i = 0; i < 2; i++){
             let foredata = data.forecast.forecastday[i]
